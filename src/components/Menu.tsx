@@ -11,21 +11,21 @@ const products: Product[] = [
   {
     icon: Banana,
     name: "Plain Banana Bread",
-    price: "160",
+    price: "150",
     description:
       "Soft, moist, and naturally sweet banana bread, freshly baked with ripe bananas.",
   },
   {
     icon: Cookie,
     name: "Chocolate Chips",
-    price: "180",
+    price: "170",
     description:
       "Classic homemade banana bread with sweet chocolate chips baked into every bite.",
   },
   {
     icon: Nut,
     name: "Chocolate Chips + Cashews",
-    price: "200",
+    price: "190",
     description:
       "Our delicious banana bread made with rich chocolate chips and crunchy cashews.",
   },
