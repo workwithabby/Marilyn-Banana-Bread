@@ -6,7 +6,7 @@ A website for homemade banana bread baked by Marilyn. The site introduces her sm
 
 This project is a single-page bakery website designed to make homemade banana bread feel personal, inviting, and easy to order. It includes a focused presentation of the brand, products, and ordering information.
 
-View the live site at [marilyn-banana-bread.vercel.app](https://tinyurl.com/k65pzuff).
+View the live site [here](https://tinyurl.com/k65pzuff).
 
 ## Features
 
@@ -23,13 +23,13 @@ I built this website to support my mom as she starts her home business selling h
 
 ## Tech Stack
 
-- [Next.js](https://nextjs.org/) 16 with the App Router
-- [React](https://react.dev/) 19
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://motion.dev/) for animations
-- [Lucide React](https://lucide.dev/) for icons
-- [next-themes](https://github.com/pacocoursey/next-themes) for theme switching
+- [Framer Motion](https://motion.dev/)
+- [Lucide React](https://lucide.dev/)
+- [next-themes](https://github.com/pacocoursey/next-themes)
 
 ## Getting Started
 
