@@ -1,5 +1,7 @@
+import { Banana, Cookie, Nut, type LucideIcon } from "lucide-react";
+
 type Product = {
-  emoji: string;
+  icon: LucideIcon;
   name: string;
   price: string;
   description: string;
@@ -7,21 +9,21 @@ type Product = {
 
 const products: Product[] = [
   {
-    emoji: "🍌",
+    icon: Banana,
     name: "Plain Banana Bread",
     price: "160",
     description:
       "Soft, moist, and naturally sweet banana bread, freshly baked with ripe bananas.",
   },
   {
-    emoji: "🍫",
+    icon: Cookie,
     name: "Chocolate Chips",
     price: "180",
     description:
       "Classic homemade banana bread with sweet chocolate chips baked into every bite.",
   },
   {
-    emoji: "🍫🥜",
+    icon: Nut,
     name: "Chocolate Chips + Cashews",
     price: "200",
     description:
@@ -50,10 +52,8 @@ export default function Menu() {
               key={p.name}
               className="group relative flex flex-col overflow-hidden rounded-[1.5rem] bg-surface shadow-sm ring-1 ring-border transition hover:-translate-y-1 hover:shadow-md"
             >
-              <div className="flex aspect-[4/3] items-center justify-center bg-cream/70">
-                <span className="text-4xl sm:text-5xl" aria-hidden="true">
-                  {p.emoji}
-                </span>
+              <div className="flex aspect-[4/3] items-center justify-center bg-cream/70 text-green-bright">
+                <p.icon size={72} strokeWidth={1.5} aria-hidden="true" />
               </div>
 
               <div className="flex flex-1 flex-col p-5 sm:p-6">
