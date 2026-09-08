@@ -35,7 +35,7 @@ export default function Storage() {
           </h2>
           <p className="mt-4 text-base leading-relaxed text-brown sm:mt-6 sm:text-lg">
             Freshly baked is best, but every next day is still delicious. Here&apos;s
-            how Mom keeps her loaves soft, moist, and ready whenever you are.
+            how to keep your loaves soft, moist, and ready whenever you are.
           </p>
         </div>
 
@@ -77,9 +77,9 @@ export default function Storage() {
                 {SITE.name}&apos;s Pro Tip
               </p>
               <p className="mt-1.5 text-sm leading-relaxed sm:text-base">
-                Slice the loaf before freezing, then wrap each slice in plastic
-                wrap and foil. Thaw only what you need — a quick warm-up in the
-                microwave tastes like it just came out of the oven.
+                Slice the loaf before freezing. Wrap each slice in plastic wrap and foil.
+                When you’re ready to eat, thaw only what you need and
+                warm it in the microwave for a fresh, just-baked taste.
               </p>
               <p className="mt-3 font-hand text-xl text-cream-ink/85">
                 — Mom

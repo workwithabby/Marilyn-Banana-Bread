@@ -1,6 +1,3 @@
-import { MessageCircle } from "lucide-react";
-import { SITE } from "@/lib/site";
-
 type Product = {
   emoji: string;
   name: string;
@@ -45,13 +42,6 @@ export default function Menu() {
               Our Banana Bread
             </h2>
           </div>
-          <a
-            href={SITE.facebookUrl}
-            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-green-bright transition hover:text-green-strong"
-          >
-            <MessageCircle size={15} aria-hidden="true" />
-            Order via Facebook
-          </a>
         </div>
 
         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">

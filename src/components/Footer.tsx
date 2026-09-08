@@ -1,6 +1,7 @@
 import { SITE } from "@/lib/site";
 
 const navLinks = [
+  { href: "#home", label: "Home" },
   { href: "#menu", label: "Menu" },
   { href: "#about", label: "About" },
   { href: "#storage", label: "Storage" },
