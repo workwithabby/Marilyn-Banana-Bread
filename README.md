@@ -6,7 +6,7 @@ A website for homemade banana bread baked by Marilyn. The site introduces her sm
 
 This project is a single-page bakery website designed to make homemade banana bread feel personal, inviting, and easy to order. It includes a focused presentation of the brand, products, and ordering information.
 
-View the live site at [marilyn-banana-bread.vercel.app](https://tinyurl.com/k65pzuff).
+View the live site [here](https://tinyurl.com/k65pzuff).
 
 ## Features
 
