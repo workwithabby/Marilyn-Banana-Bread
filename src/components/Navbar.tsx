@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
+import Image from "next/image";
 import { SITE } from "@/lib/site";
+import brandLogo from "@/assets/brand-logo.png";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
@@ -24,10 +26,15 @@ export default function Navbar() {
           className="flex items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-green text-lg text-cream-ink sm:h-10 sm:w-10 sm:text-xl">
-            🍌
-          </span>
-          <span className="font-display text-xl text-green-strong sm:text-2xl">
+          <Image
+            src={brandLogo}
+            alt={`${SITE.name} logo`}
+            width={2000}
+            height={2000}
+            priority
+            className="h-9 w-9 rounded-full object-cover sm:h-10 sm:w-10"
+          />
+          <span className="font-display text-lg text-green-strong sm:text-xl">
             {SITE.name}
           </span>
         </a>

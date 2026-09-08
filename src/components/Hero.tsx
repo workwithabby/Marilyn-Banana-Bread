@@ -64,7 +64,7 @@ function BreadPhoto() {
         className="h-44 w-full object-cover sm:h-72 lg:h-96"
       />
       <figcaption className="absolute bottom-4 left-4 rounded-full bg-cream/90 px-4 py-1.5 text-xs font-medium text-green-strong backdrop-blur-sm sm:text-sm">
-        Made in small batches by Mom 💛
+        Made with love 💛
       </figcaption>
     </figure>
   );

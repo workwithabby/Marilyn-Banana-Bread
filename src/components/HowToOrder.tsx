@@ -15,7 +15,7 @@ const steps = [
   {
     number: "3",
     title: "Confirm Your Order",
-    description: "We'll reply with the details for your order and delivery.",
+    description: "We'll reply with the details for your order confirmation and payment instructions.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function HowToOrder() {
 
         <div className="mt-8 flex flex-col items-center gap-3 text-center sm:mt-12 sm:gap-4">
           <p className="max-w-xl text-base text-brown sm:text-lg">
-            Ready for a fresh loaf? Message Mom directly on Facebook to place
+            Ready for a fresh loaf? Message us directly on Facebook to place
             your order.
           </p>
           <a

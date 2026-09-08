@@ -9,21 +9,21 @@ const products: Product[] = [
   {
     emoji: "🍌",
     name: "Plain Banana Bread",
-    price: "140",
+    price: "160",
     description:
       "Soft, moist, and naturally sweet banana bread, freshly baked with ripe bananas.",
   },
   {
     emoji: "🍫",
     name: "Chocolate Chips",
-    price: "160",
+    price: "180",
     description:
       "Classic homemade banana bread with sweet chocolate chips baked into every bite.",
   },
   {
     emoji: "🍫🥜",
     name: "Chocolate Chips + Cashews",
-    price: "180",
+    price: "200",
     description:
       "Our delicious banana bread made with rich chocolate chips and crunchy cashews.",
   },
