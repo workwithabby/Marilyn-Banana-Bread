@@ -36,13 +36,22 @@ export default function Menu() {
   return (
     <section id="menu" className="bg-cream py-12 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="max-w-2xl">
-          <p className="mb-2.5 text-xs font-medium uppercase tracking-[0.25em] text-green-bright sm:mb-3 sm:text-sm">
-            The Menu
-          </p>
-          <h2 className="font-display text-2xl leading-tight text-green-strong sm:text-4xl">
-            Our Banana Bread
-          </h2>
+        <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-3">
+          <div className="max-w-2xl">
+            <p className="mb-2.5 text-xs font-medium uppercase tracking-[0.25em] text-green-bright sm:mb-3 sm:text-sm">
+              The Menu
+            </p>
+            <h2 className="font-display text-2xl leading-tight text-green-strong sm:text-4xl">
+              Our Banana Bread
+            </h2>
+          </div>
+          <a
+            href={SITE.facebookUrl}
+            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-green-bright transition hover:text-green-strong"
+          >
+            <MessageCircle size={15} aria-hidden="true" />
+            Order via Facebook
+          </a>
         </div>
 
         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
@@ -67,13 +76,6 @@ export default function Menu() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-brown sm:mt-3">
                   {p.description}
                 </p>
-                <a
-                  href={SITE.facebookUrl}
-                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-green px-4 py-2.5 text-sm font-semibold text-cream-ink transition hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <MessageCircle size={15} aria-hidden="true" />
-                  Order Now
-                </a>
               </div>
             </article>
           ))}

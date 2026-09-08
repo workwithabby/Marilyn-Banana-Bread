@@ -1,4 +1,3 @@
-import { MessageCircle } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 const navLinks = [
@@ -32,14 +31,6 @@ export default function Footer() {
               </a>
             ))}
           </nav>
-
-          <a
-            href={SITE.facebookUrl}
-            className="inline-flex items-center gap-2 rounded-full border border-cream-ink/30 px-5 py-2.5 text-sm font-medium text-cream-ink transition hover:border-cream-ink hover:bg-cream-ink/15 hover:text-cream-ink"
-          >
-            <MessageCircle size={16} aria-hidden="true" />
-            Order on Facebook
-          </a>
         </div>
 
         <div className="mt-8 border-t border-cream-ink/15 pt-6 text-center text-xs text-cream-ink/60 sm:mt-10">
