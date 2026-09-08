@@ -67,30 +67,34 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 body {
+  position: relative;
   background-color: var(--background);
   color: var(--brown);
   font-family: var(--font-dm-sans);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Ambient background: warm countertop glows + paper grain */
+/* Ambient background: warm countertop glows + paper grain.
+   Anchored to the page (absolute, scrolls with content) so glows
+   never shift while scrolling on mobile. */
 .bg-ambient {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -10;
   pointer-events: none;
   background:
-    radial-gradient(58rem 40rem at 10% 6%, var(--glow-1), transparent 62%),
-    radial-gradient(46rem 34rem at 90% 20%, var(--glow-2), transparent 58%),
-    radial-gradient(72rem 50rem at 50% 112%, var(--glow-3), transparent 64%);
+    radial-gradient(56rem 36rem at 12% 6rem, var(--glow-1), transparent 62%),
+    radial-gradient(44rem 30rem at 88% 22rem, var(--glow-2), transparent 58%),
+    radial-gradient(70rem 46rem at 50% calc(100% - 12rem), var(--glow-3), transparent 64%);
   animation: ambient-breathe 26s ease-in-out infinite;
 }
 
 .bg-noise {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -10;
   pointer-events: none;

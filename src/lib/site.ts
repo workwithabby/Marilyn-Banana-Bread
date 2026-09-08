@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Lyn's Banana Bread",
   tagline: "Homemade banana bread, baked with love.",
-  facebookUrl: "#", // TODO: Replace with the business Facebook page URL
+  facebookUrl: "https://www.facebook.com/simplymarilyn",
   delivery: {
     areas: "[DELIVERY AREAS]",
     fee: "[DELIVERY FEE]",

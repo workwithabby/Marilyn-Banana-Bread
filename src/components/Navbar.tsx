@@ -18,16 +18,16 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-surface/90 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
         <a
           href="#home"
-          className="flex items-center gap-3"
+          className="flex items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green text-xl text-cream-ink">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-green text-lg text-cream-ink sm:h-10 sm:w-10 sm:text-xl">
             🍌
           </span>
-          <span className="font-display text-2xl text-green-strong">
+          <span className="font-display text-xl text-green-strong sm:text-2xl">
             {SITE.name}
           </span>
         </a>
@@ -68,13 +68,13 @@ export default function Navbar() {
 
       {open && (
         <nav
-          className="border-t border-border bg-surface px-5 pb-6 pt-3 md:hidden"
+          className="border-t border-border bg-surface px-5 pb-5 pt-2 md:hidden"
           aria-label="Mobile"
         >
-          <div className="flex justify-end pb-2 md:hidden">
+          <div className="flex justify-end pb-1.5 md:hidden">
             <ThemeToggle />
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3.5">
             {links.map((l) => (
               <a
                 key={l.href}

@@ -9,28 +9,28 @@ import { SITE } from "@/lib/site";
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-5 pb-16 pt-14 sm:px-8 lg:pb-24 lg:pt-20">
+      <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-14 lg:pb-24 lg:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-green-bright">
+          <p className="mb-2.5 text-xs font-medium uppercase tracking-[0.25em] text-green-bright sm:mb-4 sm:text-sm">
             Fresh from the kitchen of Mom
           </p>
-          <h1 className="font-display text-5xl leading-[1.05] text-green-strong sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-4xl leading-[1.05] text-green-strong sm:text-6xl lg:text-7xl">
             Homemade Banana Bread, Baked with Love
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-brown">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-brown sm:mt-6 sm:text-lg">
             Freshly baked in small batches by Mom, with comforting flavors
             everyone loves and a touch of homemade goodness in every loaf.
           </p>
           <a
             href={SITE.facebookUrl}
-            className="mt-9 inline-flex items-center gap-2 rounded-full bg-green px-8 py-4 text-base font-semibold text-cream-ink shadow-md transition hover:-translate-y-0.5 hover:shadow-lg"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold text-cream-ink shadow-md transition hover:-translate-y-0.5 hover:shadow-lg sm:mt-9 sm:px-8 sm:py-4 sm:text-base"
           >
-            <MessageCircle size={19} aria-hidden="true" />
+            <MessageCircle size={18} aria-hidden="true" />
             Order via Facebook
           </a>
         </motion.div>
@@ -39,7 +39,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.08 }}
-          className="relative mx-auto mt-14 max-w-4xl lg:mt-16"
+          className="relative mx-auto mt-10 max-w-4xl sm:mt-12 lg:mt-16"
         >
           <div
             aria-hidden="true"
@@ -61,7 +61,7 @@ function BreadPhoto() {
         width={1024}
         height={683}
         priority
-        className="h-56 w-full object-cover sm:h-72 lg:h-96"
+        className="h-44 w-full object-cover sm:h-72 lg:h-96"
       />
       <figcaption className="absolute bottom-4 left-4 rounded-full bg-cream/90 px-4 py-1.5 text-xs font-medium text-green-strong backdrop-blur-sm sm:text-sm">
         Made in small batches by Mom 💛

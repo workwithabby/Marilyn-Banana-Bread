@@ -10,40 +10,40 @@ const items = [
 
 export default function Delivery() {
   return (
-    <section id="delivery" className="bg-cream py-16 lg:py-24">
+    <section id="delivery" className="bg-cream py-12 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-start">
           <div className="max-w-xl">
-            <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-green-bright">
+            <p className="mb-2.5 text-xs font-medium uppercase tracking-[0.25em] text-green-bright sm:mb-3 sm:text-sm">
               Getting It to You
             </p>
-            <h2 className="font-display text-3xl leading-tight text-green-strong sm:text-4xl">
+            <h2 className="font-display text-2xl leading-tight text-green-strong sm:text-4xl">
               Delivery Information
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-brown">
+            <p className="mt-4 text-base leading-relaxed text-brown sm:mt-6 sm:text-lg">
               We currently offer delivery within selected areas.
             </p>
           </div>
 
-          <div className="rounded-[1.5rem] bg-surface p-7 shadow-sm ring-1 ring-border sm:p-8">
+          <div className="rounded-[1.5rem] bg-surface p-5 shadow-sm ring-1 ring-border sm:p-7">
             <dl className="divide-y divide-border">
               {items.map((item) => (
                 <div
                   key={item.label}
-                  className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-4 first:pt-0 last:pb-0"
+                  className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3 first:pt-0 last:pb-0"
                 >
                   <dt className="text-sm font-medium text-green-bright">
                     {item.label}
                   </dt>
-                  <dd className="font-hand text-xl text-hand">
+                  <dd className="font-hand text-lg text-hand sm:text-xl">
                     {item.value}
                   </dd>
                 </div>
               ))}
             </dl>
 
-            <div className="mt-7 rounded-2xl bg-green p-5 text-cream-ink">
-              <p className="text-base leading-relaxed">
+            <div className="mt-5 rounded-2xl bg-green p-4 text-cream-ink sm:mt-7 sm:p-5">
+              <p className="text-sm leading-relaxed sm:text-base">
                 Message us on Facebook to confirm delivery availability and
                 fees.
               </p>

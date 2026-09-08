@@ -34,42 +34,42 @@ const products: Product[] = [
 
 export default function Menu() {
   return (
-    <section id="menu" className="bg-cream py-16 lg:py-24">
+    <section id="menu" className="bg-cream py-12 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-2xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-green-bright">
+          <p className="mb-2.5 text-xs font-medium uppercase tracking-[0.25em] text-green-bright sm:mb-3 sm:text-sm">
             The Menu
           </p>
-          <h2 className="font-display text-3xl leading-tight text-green-strong sm:text-4xl">
+          <h2 className="font-display text-2xl leading-tight text-green-strong sm:text-4xl">
             Our Banana Bread
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {products.map((p) => (
             <article
               key={p.name}
               className="group relative flex flex-col overflow-hidden rounded-[1.5rem] bg-surface shadow-sm ring-1 ring-border transition hover:-translate-y-1 hover:shadow-md"
             >
               <div className="flex aspect-[4/3] items-center justify-center bg-cream/70">
-                <span className="text-5xl" aria-hidden="true">
+                <span className="text-4xl sm:text-5xl" aria-hidden="true">
                   {p.emoji}
                 </span>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-display text-lg leading-snug text-green-strong sm:text-xl">
+                  <h3 className="font-display text-base leading-snug text-green-strong sm:text-xl">
                     {p.name}
                   </h3>
                   <PriceTag amount={p.price} />
                 </div>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-brown">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-brown sm:mt-3">
                   {p.description}
                 </p>
                 <a
                   href={SITE.facebookUrl}
-                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-green px-4 py-2.5 text-sm font-semibold text-cream-ink transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-green px-4 py-2.5 text-sm font-semibold text-cream-ink transition hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <MessageCircle size={15} aria-hidden="true" />
                   Order Now
@@ -87,7 +87,7 @@ function PriceTag({ amount }: { amount: string }) {
   return (
     <span className="flex shrink-0 items-baseline gap-0.5">
       <span className="text-xs font-semibold text-muted">₱</span>
-      <span className="font-hand text-2xl leading-none text-hand sm:text-3xl">
+      <span className="font-hand text-xl leading-none text-hand sm:text-3xl">
         {amount}
       </span>
     </span>

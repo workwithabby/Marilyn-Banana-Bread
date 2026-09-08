@@ -5,8 +5,8 @@ const aboutImage =
 
 export default function About() {
   return (
-    <section id="about" className="py-16 lg:py-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
+    <section id="about" className="py-12 sm:py-16 lg:py-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 sm:px-8 sm:gap-12 lg:grid-cols-2">
         <div className="overflow-hidden rounded-[2rem] bg-cream ring-1 ring-border">
           <Image
             src={aboutImage}
@@ -18,18 +18,18 @@ export default function About() {
         </div>
 
         <div className="max-w-xl">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-green-bright">
+          <p className="mb-2.5 text-xs font-medium uppercase tracking-[0.25em] text-green-bright sm:mb-3 sm:text-sm">
             Our Story
           </p>
-          <h2 className="font-display text-3xl leading-tight text-green-strong sm:text-4xl">
+          <h2 className="font-display text-2xl leading-tight text-green-strong sm:text-4xl">
             Made by Mom, Baked with Love
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-brown">
+          <p className="mt-4 text-base leading-relaxed text-brown sm:mt-6 sm:text-lg">
             Every loaf is homemade and freshly baked by Mom.
             What started as her love for baking has grown into a small business.
             Each banana bread is made with love and care, one batch at a time.
           </p>
-          <p className="mt-6 font-hand text-3xl text-green-bright">
+          <p className="mt-4 font-hand text-2xl text-green-bright sm:mt-6 sm:text-3xl">
             — Mom
           </p>
         </div>
