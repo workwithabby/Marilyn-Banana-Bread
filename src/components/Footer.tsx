@@ -3,7 +3,7 @@ import { SITE } from "@/lib/site";
 const navLinks = [
   { href: "#menu", label: "Menu" },
   { href: "#about", label: "About" },
-  { href: "#delivery", label: "Delivery" },
+  { href: "#storage", label: "Storage" },
   { href: "#order", label: "Order" },
 ];
 

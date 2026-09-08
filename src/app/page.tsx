@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Menu from "@/components/Menu";
 import About from "@/components/About";
-import Delivery from "@/components/Delivery";
+import Storage from "@/components/Storage";
 import HowToOrder from "@/components/HowToOrder";
 import Footer from "@/components/Footer";
 
@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
         <Menu />
         <About />
-        <Delivery />
+        <Storage />
         <HowToOrder />
       </main>
       <Footer />
