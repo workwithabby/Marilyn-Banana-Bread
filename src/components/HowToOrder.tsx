@@ -18,6 +18,11 @@ const steps = [
     title: "Confirm Your Order",
     description: "We'll reply with the details for your order confirmation and payment instructions.",
   },
+  {
+    number: "4",
+    title: "Arrange Delivery",
+    description: "Based in Marikina City, we'll discuss delivery details when you message us.",
+  },
 ];
 
 export default function HowToOrder() {
@@ -57,7 +62,7 @@ export default function HowToOrder() {
           </div>
         </Reveal>
 
-        <ol className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 lg:grid-cols-3">
+        <ol className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 lg:grid-cols-2">
           {steps.map((step, i) => (
             <Reveal key={step.number} delay={0.15 * i}>
               <li className="relative rounded-[1.5rem] bg-surface p-5 shadow-sm ring-1 ring-border sm:p-7">

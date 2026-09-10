@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 import Reveal from "./Reveal";
 
 const aboutImage =
@@ -33,7 +34,11 @@ export default function About() {
               What started as her love for baking has grown into a small business.
               Each banana bread is made with love and care, one batch at a time.
             </p>
-            <p className="mt-4 font-hand text-2xl text-green-bright sm:mt-6 sm:text-3xl">
+            <p className="mt-4 flex items-center gap-2 text-sm text-brown sm:mt-5 sm:text-base">
+              <MapPin size={18} strokeWidth={1.75} className="text-green-bright" aria-hidden="true" />
+              We&apos;re based in Marikina City.
+            </p>
+            <p className="mt-4 font-hand text-2xl text-green-bright sm:mt-5 sm:text-3xl">
               — Mom
             </p>
           </div>

@@ -5,9 +5,9 @@ import Reveal from "./Reveal";
 const storageTips = [
   {
     icon: ThermometerSun,
-    method: "Room Temperature",
-    duration: "1–2 days",
-    tip: "Seal it in an airtight container or wrap it well to keep the loaf soft and moist.",
+    method: "Best Enjoyed",
+    duration: "within 2-3 days",
+    tip: "Keep tightly wrapped or in an airtight container in a cool, dry place.",
   },
   {
     icon: Refrigerator,
