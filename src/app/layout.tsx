@@ -23,7 +23,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "Marilyn's Banana Bread",
   description:
-    "Freshly made and baked in small batches by Mom. Homemade banana bread in Plain, Chocolate Chips, and Chocolate Chips + Cashews. Message us on Facebook to order.",
+    "Freshly made and baked in small batches by Mom. Homemade banana bread in Plain, Chocolate Chips, Chocolate Chips + Cashews, and Biscoff. Message us on Facebook to order.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

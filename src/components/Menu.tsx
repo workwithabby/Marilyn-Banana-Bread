@@ -24,6 +24,9 @@ import chips02 from "@/assets/Chocolate Chips/chocochips-02.jpg";
 import cashewsThumb from "@/assets/Chocolate Chips and Cashews/chococashews-thumbnail.jpg";
 import cashews01 from "@/assets/Chocolate Chips and Cashews/chococashews-01.jpg";
 import cashews02 from "@/assets/Chocolate Chips and Cashews/chococashews-02.jpg";
+import biscoffThumb from "@/assets/Biscoff/biscoff-thumbnail.jpg";
+import biscoff01 from "@/assets/Biscoff/biscoff-01.jpg";
+import biscoff02 from "@/assets/Biscoff/biscoff-02.jpg";
 
 type Product = {
   icon: LucideIcon;
@@ -65,6 +68,16 @@ const products: Product[] = [
     alt: "Banana bread with chocolate chips and cashews",
     thumbnail: cashewsThumb,
     samples: [cashewsThumb, cashews01, cashews02],
+  },
+  {
+    icon: Cookie,
+    name: "Biscoff",
+    price: "250",
+    description:
+      "Banana bread filled with Biscoff spread, topped with Biscoff drizzle and crushed Biscoff biscuits.",
+    alt: "Banana bread drizzled with Biscoff spread",
+    thumbnail: biscoffThumb,
+    samples: [biscoffThumb, biscoff01, biscoff02],
   },
 ];
 
