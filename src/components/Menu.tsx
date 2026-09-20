@@ -146,8 +146,8 @@ export default function Menu() {
         </Reveal>
 
         <div className="mt-6 grid gap-3.5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {products.map((p, i) => (
-            <Reveal key={p.name} delay={0.12 * i}>
+          {products.map((p) => (
+            <Reveal key={p.name}>
               <article
                 onClick={() => openViewer(p)}
                 role="button"
