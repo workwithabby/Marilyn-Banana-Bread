@@ -24,6 +24,10 @@ import chips02 from "@/assets/Chocolate Chips/chocochips-02.jpg";
 import cashewsThumb from "@/assets/Chocolate Chips and Cashews/chococashews-thumbnail.jpg";
 import cashews01 from "@/assets/Chocolate Chips and Cashews/chococashews-01.jpg";
 import cashews02 from "@/assets/Chocolate Chips and Cashews/chococashews-02.jpg";
+import doubleChocoThumb from "@/assets/Double Chocolate Chips/doublechoco-thumbnail.jpg";
+import doubleChoco01 from "@/assets/Double Chocolate Chips/doublechoco-01.jpg";
+import doubleChoco02 from "@/assets/Double Chocolate Chips/doublechoco-02.jpg";
+import doubleChoco03 from "@/assets/Double Chocolate Chips/doublechoco-03.jpg";
 import biscoffThumb from "@/assets/Biscoff/biscoff-thumbnail.jpg";
 import biscoff01 from "@/assets/Biscoff/biscoff-01.jpg";
 import biscoff02 from "@/assets/Biscoff/biscoff-02.jpg";
@@ -68,6 +72,16 @@ const products: Product[] = [
     alt: "Banana bread with chocolate chips and cashews",
     thumbnail: cashewsThumb,
     samples: [cashewsThumb, cashews01, cashews02],
+  },
+  {
+    icon: Cookie,
+    name: "Double Chocolate Chips",
+    price: "200",
+    description:
+      "Loaded with chocolate chips inside and topped with even more chocolate chips.",
+    alt: "Banana bread loaded with double chocolate chips",
+    thumbnail: doubleChocoThumb,
+    samples: [doubleChocoThumb, doubleChoco01, doubleChoco02, doubleChoco03],
   },
   {
     icon: Cookie,
