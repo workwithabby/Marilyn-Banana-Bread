@@ -10,6 +10,7 @@ import {
   Cookie,
   MousePointerClick,
   Nut,
+  Star,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -38,6 +39,7 @@ type Product = {
   price: string;
   description: string;
   alt: string;
+  badge?: string;
   thumbnail: StaticImageData;
   samples: StaticImageData[];
 };
@@ -70,6 +72,7 @@ const products: Product[] = [
     description:
       "Our delicious banana bread made with rich chocolate chips and crunchy cashews.",
     alt: "Banana bread with chocolate chips and cashews",
+    badge: "Best Seller",
     thumbnail: cashewsThumb,
     samples: [cashewsThumb, cashews01, cashews02],
   },
@@ -183,6 +186,17 @@ export default function Menu() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <span className="absolute inset-0 bg-green-strong/0 transition group-hover:bg-green-strong/5" />
+                  {p.badge && (
+                    <span className="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-green px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-cream-ink shadow-sm ring-1 ring-green-deep/30 -rotate-2 sm:bottom-3.5 sm:left-3.5 sm:px-2.5 sm:py-1 sm:text-[11px] sm:tracking-[0.15em]">
+                      <Star
+                        size={10}
+                        strokeWidth={1.5}
+                        className="shrink-0 sm:size-3"
+                        aria-hidden="true"
+                      />
+                      {p.badge}
+                    </span>
+                  )}
                   <span className="absolute bottom-2.5 right-2.5 flex h-10 w-10 items-center justify-center rounded-full bg-surface/90 text-green-bright shadow-sm ring-1 ring-border backdrop-blur-sm transition group-hover:scale-105 sm:bottom-3 sm:right-3 sm:h-11 sm:w-11">
                     <p.icon size={18} strokeWidth={1.5} aria-hidden="true" />
                   </span>
