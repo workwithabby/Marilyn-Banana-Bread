@@ -369,7 +369,7 @@ export default function ChatAssistant() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about the menu..."
-                className="min-w-0 flex-1 rounded-full bg-cream/70 px-4 py-2.5 text-sm text-brown outline-none ring-1 ring-transparent transition duration-200 ease-smooth placeholder:text-muted focus:bg-cream focus:ring-2 focus:ring-green/40"
+                className="min-w-0 flex-1 rounded-full bg-cream/70 px-4 py-2.5 text-base text-brown outline-none ring-1 ring-transparent transition duration-200 ease-smooth placeholder:text-muted focus:bg-cream focus:ring-2 focus:ring-green/40"
               />
               <button
                 type="submit"
