@@ -1,3 +1,6 @@
+"use client";
+
+import { ArrowUp } from "lucide-react";
 import { SITE } from "@/lib/site";
 import Reveal from "./Reveal";
 
@@ -10,6 +13,10 @@ const navLinks = [
 ];
 
 export default function Footer() {
+  const backToTop = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <footer className="bg-green-deep text-cream-ink">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
@@ -28,16 +35,29 @@ export default function Footer() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="text-sm text-cream-ink/75 transition-colors hover:text-cream-ink"
+                  className="text-sm text-cream-ink/75 transition-colors duration-200 hover:text-cream-ink"
                 >
                   {l.label}
                 </a>
               ))}
             </nav>
+
+            <button
+              type="button"
+              onClick={backToTop}
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-cream-ink/10 px-5 py-2.5 text-sm font-medium text-cream-ink ring-1 ring-cream-ink/20 transition duration-200 hover:bg-cream-ink/20 active:scale-95"
+            >
+              <ArrowUp
+                size={16}
+                aria-hidden="true"
+                className="transition-transform duration-200 group-hover:-translate-y-0.5"
+              />
+              Back to top
+            </button>
           </div>
         </Reveal>
 
-        <div className="mt-8 border-t border-cream-ink/15 pt-6 text-center text-xs text-cream-ink/60 sm:mt-10">
+        <div className="mt-8 border-t border-cream-ink/15 pt-6 text-center text-xs text-cream-ink/70 sm:mt-10">
           © 2026 {SITE.name}. All rights reserved.
         </div>
       </div>

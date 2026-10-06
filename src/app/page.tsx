@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Storage from "@/components/Storage";
 import HowToOrder from "@/components/HowToOrder";
 import Footer from "@/components/Footer";
+import ChatAssistant from "@/components/ChatAssistant";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <HowToOrder />
       </main>
       <Footer />
+      <ChatAssistant />
     </>
   );
 }

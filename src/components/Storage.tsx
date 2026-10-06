@@ -44,8 +44,8 @@ export default function Storage() {
 
         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-3 sm:gap-6">
           {storageTips.map((tip, i) => (
-            <Reveal key={tip.method} delay={0.12 * i}>
-              <article className="flex h-full flex-col rounded-[1.5rem] bg-surface p-5 shadow-sm ring-1 ring-border transition hover:-translate-y-1 hover:shadow-md sm:p-7">
+            <Reveal key={tip.method} delay={0.08 * i} y={20} scale>
+              <article className="flex h-full flex-col rounded-[1.5rem] bg-surface p-5 shadow-sm ring-1 ring-border transition duration-200 ease-spring hover:-translate-y-1 hover:shadow-md hover:ring-green/30 sm:p-7">
                 <span
                   className="flex h-12 w-12 items-center justify-center rounded-full bg-cream/70 text-green-strong"
                   aria-hidden="true"

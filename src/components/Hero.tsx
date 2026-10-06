@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { MessageCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { Heart, MessageCircle } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import bananaBreadImage from "../assets/banana-bread.jpg";
 import { SITE } from "@/lib/site";
 
 const container = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.09, delayChildren: 0.05 },
   },
 };
 
@@ -18,7 +18,7 @@ const item = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" as const },
+    transition: { duration: 0.55, ease: [0.34, 1.3, 0.64, 1] as const },
   },
 };
 
@@ -51,21 +51,30 @@ export default function Hero() {
             Freshly baked in small batches by Mom, with comforting flavors
             everyone loves and a touch of homemade goodness in every loaf.
           </motion.p>
-          <motion.div variants={item}>
+          <motion.div
+            variants={item}
+            className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:mt-9"
+          >
             <a
               href={SITE.facebookUrl}
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold text-cream-ink shadow-md transition hover:-translate-y-0.5 hover:shadow-lg sm:mt-9 sm:px-8 sm:py-4 sm:text-base"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-green px-7 py-3.5 text-sm font-semibold text-cream-ink shadow-md transition duration-200 ease-spring hover:-translate-y-0.5 hover:shadow-lg active:scale-95 sm:px-8 sm:py-4 sm:text-base"
             >
               <MessageCircle size={18} aria-hidden="true" />
               Order via Facebook
+            </a>
+            <a
+              href="#menu"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-green-strong ring-1 ring-border transition duration-200 ease-spring hover:-translate-y-0.5 hover:ring-green/40 active:scale-95 sm:px-8 sm:py-4 sm:text-base"
+            >
+              Browse Flavors
             </a>
           </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          initial={{ opacity: 0, y: 24, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
           className="relative mx-auto mt-10 max-w-4xl sm:mt-12 lg:mt-16"
         >
           <div
@@ -80,9 +89,11 @@ export default function Hero() {
 }
 
 function BreadPhoto() {
+  const reduce = useReducedMotion();
+
   return (
     <motion.figure
-      animate={{ y: [0, -10, 0] }}
+      animate={reduce ? undefined : { y: [0, -10, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       className="relative overflow-hidden rounded-[2rem] shadow-lg ring-1 ring-border"
     >
@@ -91,16 +102,17 @@ function BreadPhoto() {
         alt="A fresh loaf of homemade banana bread"
         width={1024}
         height={683}
-        priority
+        preload
         className="h-44 w-full object-cover sm:h-72 lg:h-96"
       />
       <motion.figcaption
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9, duration: 0.5, ease: "easeOut" }}
-        className="absolute bottom-4 left-4 rounded-full bg-cream/90 px-4 py-1.5 text-xs font-medium text-green-strong backdrop-blur-sm sm:text-sm"
+        className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-cream/90 px-4 py-1.5 text-xs font-medium text-green-strong backdrop-blur-sm sm:text-sm"
       >
-        Made with love 💛
+        Made with love
+        <Heart size={13} className="fill-green-bright text-green-bright" aria-hidden="true" />
       </motion.figcaption>
     </motion.figure>
   );

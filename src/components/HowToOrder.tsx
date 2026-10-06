@@ -64,9 +64,9 @@ export default function HowToOrder() {
 
         <ol className="mt-8 grid gap-4 sm:mt-10 sm:gap-6 lg:grid-cols-2">
           {steps.map((step, i) => (
-            <Reveal key={step.number} delay={0.15 * i}>
-              <li className="relative rounded-[1.5rem] bg-surface p-5 shadow-sm ring-1 ring-border sm:p-7">
-                <span className="font-display text-3xl text-border sm:text-4xl">
+            <Reveal key={step.number} delay={0.07 * i} y={20} scale>
+              <li className="group relative rounded-[1.5rem] bg-surface p-5 shadow-sm ring-1 ring-border transition duration-200 ease-spring hover:-translate-y-1 hover:shadow-md hover:ring-green/30 sm:p-7">
+                <span className="font-display text-3xl text-border transition-colors duration-200 group-hover:text-green/70 sm:text-4xl">
                   {step.number}
                 </span>
                 <h3 className="mt-2 font-display text-lg leading-snug text-green-strong sm:mt-3 sm:text-xl">
@@ -88,7 +88,7 @@ export default function HowToOrder() {
             </p>
             <a
               href={SITE.facebookUrl}
-              className="inline-flex items-center gap-2 rounded-full bg-green px-7 py-3.5 text-base font-semibold text-cream-ink shadow-md transition hover:-translate-y-0.5 hover:shadow-lg sm:px-8 sm:py-4 sm:text-lg"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-green px-7 py-3.5 text-base font-semibold text-cream-ink shadow-md transition duration-200 ease-spring hover:-translate-y-0.5 hover:shadow-lg active:scale-95 sm:px-8 sm:py-4 sm:text-lg"
             >
               <MessageCircle size={20} aria-hidden="true" />
               Message Us on Facebook

@@ -16,12 +16,21 @@
   --green-strong: #34422a;
   --green-bright: #4c5f3c;
   --brown: #6a4e31;
-  --muted: #8f7355;
+  --muted: #7d6247;
   --hand: #6a4e31;
 
   --glow-1: rgba(253, 245, 226, 0.95);
   --glow-2: rgba(76, 95, 60, 0.08);
   --glow-3: rgba(242, 224, 192, 0.75);
+
+  /* Header height token (used for scroll-padding below) */
+  --header-h: 3.75rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-h: 4.5rem;
+  }
 }
 
 .dark {
@@ -63,11 +72,19 @@
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-dm-serif);
   --font-hand: var(--font-caveat);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 0.75rem);
   background-color: var(--background);
+}
+
+::selection {
+  background: var(--green);
+  color: var(--cream-ink);
 }
 
 body {

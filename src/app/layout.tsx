@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, DM_Sans, Caveat } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
+import MotionProvider from "@/components/MotionProvider";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -36,7 +37,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <div aria-hidden="true" className="bg-ambient" />
         <div aria-hidden="true" className="bg-noise" />
-        <ThemeProvider>{children}</ThemeProvider>
+        <MotionProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </MotionProvider>
       </body>
     </html>
   );
