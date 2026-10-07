@@ -186,7 +186,8 @@ const PRODUCT_TRIGGERS: { name: string; phrases?: string[]; words?: string[] }[]
   { name: "Biscoff", words: ["biscoff", "lotus"] },
   { name: "Chocolate Chips + Cashews", words: ["cashew", "cashews"] },
   { name: "Chocolate Chips", words: ["chocolate", "choco", "chips"] },
-  { name: "Plain Banana Bread", words: ["plain", "original", "classic"] },
+  { name: "Original", words: ["plain", "original", "classic"] },
+  { name: "Walnut", words: ["walnut", "walnuts"] },
 ];
 
 function detectProduct(normalized: string, words: string[]) {
@@ -339,7 +340,7 @@ export function getReply(rawInput: string): ChatReply {
     case "ingredients":
       return {
         text:
-          "Every loaf starts with ripe bananas and our homemade recipe — no preservatives. Variants add chocolate chips, cashews, or Biscoff.\n" +
+          "Every loaf starts with ripe bananas and our homemade recipe — no preservatives. Variants add chocolate chips, cashews, walnuts, or Biscoff.\n" +
           "For specific allergen details (nuts, dairy, gluten), please message us on Facebook so we can confirm per batch.",
         chips: ["What's on the menu?", "How do I order?"],
         link: FB,

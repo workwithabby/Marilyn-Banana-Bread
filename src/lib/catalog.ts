@@ -7,7 +7,7 @@ export type CatalogItem = {
 
 export const catalog: CatalogItem[] = [
   {
-    name: "Plain Banana Bread",
+    name: "Original",
     price: "150",
     description:
       "Soft, moist, and naturally sweet banana bread, freshly baked with ripe bananas.",
@@ -24,6 +24,12 @@ export const catalog: CatalogItem[] = [
     description:
       "Our delicious banana bread made with rich chocolate chips and crunchy cashews.",
     badge: "Best Seller",
+  },
+  {
+    name: "Walnut",
+    price: "190",
+    description:
+      "Loaded with crunchy walnuts inside with even more walnuts on top for that extra nutty crunch.",
   },
   {
     name: "Double Chocolate Chips",

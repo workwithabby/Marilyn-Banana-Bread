@@ -19,6 +19,9 @@ import doubleChoco03 from "@/assets/Double Chocolate Chips/doublechoco-03.jpg";
 import biscoffThumb from "@/assets/Biscoff/biscoff-thumbnail.jpg";
 import biscoff01 from "@/assets/Biscoff/biscoff-01.jpg";
 import biscoff02 from "@/assets/Biscoff/biscoff-02.jpg";
+import walnutThumb from "@/assets/Walnut/walnut-thumbnail.jpg";
+import walnut01 from "@/assets/Walnut/walnut-01.jpg";
+import walnut02 from "@/assets/Walnut/walnut-02.jpg";
 
 export type Product = CatalogItem & {
   icon: LucideIcon;
@@ -35,9 +38,9 @@ const item = (name: string): CatalogItem => {
 
 export const products: Product[] = [
   {
-    ...item("Plain Banana Bread"),
+    ...item("Original"),
     icon: Banana,
-    alt: "Slices of plain banana bread",
+    alt: "Slices of original banana bread",
     thumbnail: plainThumb,
     samples: [plainThumb, plain01, plain02],
   },
@@ -54,6 +57,13 @@ export const products: Product[] = [
     alt: "Banana bread with chocolate chips and cashews",
     thumbnail: cashewsThumb,
     samples: [cashewsThumb, cashews01, cashews02],
+  },
+  {
+    ...item("Walnut"),
+    icon: Nut,
+    alt: "Banana bread loaded with walnuts",
+    thumbnail: walnutThumb,
+    samples: [walnutThumb, walnut01, walnut02],
   },
   {
     ...item("Double Chocolate Chips"),
