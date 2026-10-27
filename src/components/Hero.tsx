@@ -50,6 +50,7 @@ export default function Hero() {
           >
             Freshly baked in small batches by Mom, with comforting flavors
             everyone loves and a touch of homemade goodness in every loaf.
+            Message us through our Facebook page to order.
           </motion.p>
           <motion.div
             variants={item}

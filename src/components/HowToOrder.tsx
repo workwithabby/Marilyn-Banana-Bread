@@ -10,8 +10,8 @@ const steps = [
   },
   {
     number: "2",
-    title: "Message Us",
-    description: "Send us your order through Facebook Messenger.",
+    title: "Message Our Facebook Page",
+    description: "Send us your order through our Facebook page.",
   },
   {
     number: "3",
@@ -83,8 +83,8 @@ export default function HowToOrder() {
         <Reveal delay={0.1}>
           <div className="mt-8 flex flex-col items-center gap-3 text-center sm:mt-12 sm:gap-4">
             <p className="max-w-xl text-base text-brown sm:text-lg">
-              Ready for a fresh loaf? Message us directly on Facebook to place
-              your order.
+              Ready for a fresh loaf? Message us through our Facebook page to
+              place your order.
             </p>
             <a
               href={SITE.facebookUrl}

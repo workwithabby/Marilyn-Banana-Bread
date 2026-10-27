@@ -19,7 +19,10 @@ export const STARTER_CHIPS = [
   "How do I order?",
 ];
 
-const FB: ChatLink = { label: "Message us on Facebook", href: SITE.facebookUrl };
+const FB: ChatLink = {
+  label: "Message us on our Facebook page",
+  href: SITE.facebookUrl,
+};
 
 export const MAX_MESSAGE_LENGTH = 160;
 
@@ -305,7 +308,7 @@ export function getReply(rawInput: string): ChatReply {
         text:
           "How to order:\n" +
           "1. Choose your flavor.\n" +
-          "2. Message us first on Facebook Messenger.\n" +
+          "2. Message us through our Facebook page.\n" +
           "3. We'll reply with order confirmation, our mode of payment, and delivery details.\n" +
           "4. We'll arrange the delivery with you.\n" +
           "We bake fresh by pre-order, so please order in advance to reserve your loaf.",
@@ -316,7 +319,7 @@ export function getReply(rawInput: string): ChatReply {
     case "payment":
       return {
         text:
-          "Payment and delivery are arranged personally — just message us first on Facebook with your order, and we'll reply with our accepted mode of payment and the delivery details for your location.",
+          "Payment and delivery are arranged personally — just message us through our Facebook page with your order, and we'll reply with our accepted mode of payment and the delivery details for your location.",
         chips: ["How do I order?", "Do you deliver?"],
         link: FB,
       };
@@ -324,7 +327,7 @@ export function getReply(rawInput: string): ChatReply {
     case "delivery":
       return {
         text:
-          "We're based in Marikina City. Message us first on Facebook with your order and location — we'll confirm the serviceable area, the delivery arrangement, and how to pay for your order.",
+          "We're based in Marikina City. Message us through our Facebook page with your order and location — we'll confirm the serviceable area, the delivery arrangement, and how to pay for your order.",
         chips: ["How do I order?", "How do I pay?"],
         link: FB,
       };
@@ -341,7 +344,7 @@ export function getReply(rawInput: string): ChatReply {
       return {
         text:
           "Every loaf starts with ripe bananas and our homemade recipe — no preservatives. Variants add chocolate chips, cashews, walnuts, or Biscoff.\n" +
-          "For specific allergen details (nuts, dairy, gluten), please message us on Facebook so we can confirm per batch.",
+          "For specific allergen details (nuts, dairy, gluten), please message us through our Facebook page so we can confirm per batch.",
         chips: ["What's on the menu?", "How do I order?"],
         link: FB,
       };
