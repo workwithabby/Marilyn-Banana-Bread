@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  CakeSlice,
   ChevronLeft,
   ChevronRight,
   MousePointerClick,
@@ -11,7 +12,16 @@ import {
   X,
 } from "lucide-react";
 import Reveal from "./Reveal";
-import { products, type Product } from "@/lib/products";
+import { products } from "@/lib/products";
+import { featuredMuffin, otherMuffinFlavors } from "@/lib/muffins";
+
+type Viewable = {
+  name: string;
+  price: string;
+  description: string;
+  unit?: string;
+  samples: StaticImageData[];
+};
 
 const imgVariants = {
   enter: (direction: number) => ({ opacity: 0, x: direction > 0 ? 48 : -48 }),
@@ -20,14 +30,14 @@ const imgVariants = {
 };
 
 export default function Menu() {
-  const [active, setActive] = useState<Product | null>(null);
+  const [active, setActive] = useState<Viewable | null>(null);
   const [sampleIndex, setSampleIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const lastFocused = useRef<HTMLElement | null>(null);
 
-  const openViewer = (p: Product) => {
+  const openViewer = (p: Viewable) => {
     lastFocused.current = document.activeElement as HTMLElement;
     setActive(p);
     setSampleIndex(0);
@@ -167,6 +177,118 @@ export default function Menu() {
             </Reveal>
           ))}
         </div>
+
+        <div className="mt-10 border-t border-border pt-8 sm:mt-16 sm:pt-12">
+          <Reveal>
+            <div className="max-w-2xl">
+              <p className="mb-2.5 text-xs font-medium uppercase tracking-[0.25em] text-green-bright sm:mb-3 sm:text-sm">
+                New in Menu
+              </p>
+              <h2 className="font-display text-2xl leading-tight text-green-strong sm:text-4xl">
+                Muffins
+              </h2>
+              <p className="mt-3 inline-flex items-center gap-2 text-sm text-muted sm:mt-4">
+                <MousePointerClick size={16} aria-hidden="true" />
+                Tap the featured flavor to browse its photos.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-6 grid gap-3.5 sm:mt-10 sm:gap-6 lg:grid-cols-2">
+            <Reveal y={20} scale>
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl bg-surface shadow-sm ring-1 ring-border transition duration-200 ease-spring hover:-translate-y-1 hover:shadow-md group-active:scale-[0.985] sm:rounded-[1.5rem]">
+                <button
+                  type="button"
+                  onClick={() => openViewer(featuredMuffin)}
+                  aria-haspopup="dialog"
+                  aria-label={`View photos of ${featuredMuffin.name}`}
+                  className="absolute inset-0 z-10 cursor-pointer rounded-2xl focus-visible:-outline-offset-4 sm:rounded-[1.5rem]"
+                />
+                <div className="relative block aspect-[4/3] w-full overflow-hidden bg-cream/70 text-green-bright">
+                  <Image
+                    src={featuredMuffin.thumbnail}
+                    alt={featuredMuffin.alt}
+                    fill
+                    sizes="(min-width:1024px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-0 bg-green-strong/0 transition group-hover:bg-green-strong/5" />
+                  {featuredMuffin.badge && (
+                    <span className="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-green px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-cream-ink shadow-sm ring-1 ring-green-deep/30 -rotate-2 sm:bottom-3.5 sm:left-3.5 sm:px-2.5 sm:py-1 sm:text-[11px] sm:tracking-[0.15em]">
+                      <Star
+                        size={10}
+                        strokeWidth={1.5}
+                        className="shrink-0 sm:size-3"
+                        aria-hidden="true"
+                      />
+                      {featuredMuffin.badge}
+                    </span>
+                  )}
+                  <span className="absolute bottom-2.5 right-2.5 flex h-10 w-10 items-center justify-center rounded-full bg-surface/90 text-green-bright shadow-sm ring-1 ring-border backdrop-blur-sm transition duration-200 group-hover:scale-110 group-hover:ring-green/40 sm:bottom-3 sm:right-3 sm:h-11 sm:w-11">
+                    <CakeSlice size={18} strokeWidth={1.5} aria-hidden="true" />
+                  </span>
+                </div>
+
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <div className="flex items-start justify-between gap-3 sm:gap-4">
+                    <h3 className="font-display text-base leading-snug text-green-strong sm:text-xl">
+                      {featuredMuffin.name}
+                    </h3>
+                    <PriceTag amount={featuredMuffin.price} suffix={featuredMuffin.unit} />
+                  </div>
+                  <p className="mt-1.5 flex-1 text-sm leading-relaxed text-brown sm:mt-3">
+                    {featuredMuffin.description}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+
+            <Reveal delay={0.08} y={20} scale>
+              <div className="flex h-full flex-col rounded-2xl bg-surface p-5 shadow-sm ring-1 ring-border sm:rounded-[1.5rem] sm:p-7">
+                <div className="flex items-center gap-2.5">
+                  <span
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-cream/70 text-green-strong"
+                    aria-hidden="true"
+                  >
+                    <CakeSlice size={18} strokeWidth={1.75} />
+                  </span>
+                  <h3 className="font-display text-lg leading-snug text-green-strong sm:text-xl">
+                    Also Available
+                  </h3>
+                </div>
+                <ul className="mt-2 divide-y divide-border">
+                  {otherMuffinFlavors.map((m) => (
+                    <li key={m.name} className="flex items-start justify-between gap-3 py-3">
+                      <div>
+                        <p className="text-sm font-medium leading-snug text-green-strong">
+                          {m.name}
+                        </p>
+                        <p className="mt-0.5 text-sm leading-relaxed text-brown">
+                          {m.description}
+                        </p>
+                      </div>
+                      <span className="flex shrink-0 flex-col items-end">
+                        <span className="flex items-baseline gap-0.5">
+                          <span className="text-xs font-semibold text-muted">₱</span>
+                          <span className="font-hand text-xl leading-none text-hand">
+                            {m.price}
+                          </span>
+                        </span>
+                        <span className="mt-0.5 text-[10px] font-medium uppercase tracking-wide text-muted">
+                          box of 4
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-auto pt-3 text-xs leading-relaxed text-muted">
+                  All muffin flavors are sold per box of 4 pieces. Tell us which one
+                  you&apos;d like when you order.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -207,6 +329,11 @@ export default function Menu() {
                     <p className="mt-1 font-hand text-2xl leading-none text-hand sm:mt-1.5">
                       ₱{active.price}
                     </p>
+                    {active.unit && (
+                      <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted">
+                        {active.unit}
+                      </p>
+                    )}
                   </div>
                   <button
                     ref={closeRef}
@@ -289,13 +416,20 @@ export default function Menu() {
   );
 }
 
-function PriceTag({ amount }: { amount: string }) {
+function PriceTag({ amount, suffix }: { amount: string; suffix?: string }) {
   return (
-    <span className="flex shrink-0 items-baseline gap-0.5">
-      <span className="text-xs font-semibold text-muted">₱</span>
-      <span className="font-hand text-xl leading-none text-hand sm:text-3xl">
-        {amount}
+    <span className="flex shrink-0 flex-col items-end">
+      <span className="flex items-baseline gap-0.5">
+        <span className="text-xs font-semibold text-muted">₱</span>
+        <span className="font-hand text-xl leading-none text-hand sm:text-3xl">
+          {amount}
+        </span>
       </span>
+      {suffix && (
+        <span className="mt-0.5 text-[10px] font-medium uppercase tracking-wide text-muted">
+          {suffix}
+        </span>
+      )}
     </span>
   );
 }

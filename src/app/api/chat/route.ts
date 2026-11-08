@@ -1,5 +1,6 @@
 import { sanitizeInput, needsGemini } from "@/lib/assistant";
 import { catalog } from "@/lib/catalog";
+import { featuredMuffin, muffinFlavors } from "@/lib/muffins";
 
 export const runtime = "nodejs";
 export const maxDuration = 15;
@@ -8,14 +9,20 @@ const API_KEY = process.env.GEMINI_API_KEY;
 const MODEL = process.env.GEMINI_MODEL ?? "gemini-3.1-flash-lite";
 
 const MENU = catalog.map((p) => `• ${p.name} — ₱${p.price}`).join("\n");
+const MUFFIN_MENU = muffinFlavors
+  .map((m) => `• ${m.name} — ₱${m.price} per box of 4`)
+  .join("\n");
 
 const SYSTEM_PROMPT = `You are the friendly assistant for "Marilyn's Banana Bread", a small home-based bakeshop in Marikina City, Philippines, selling homemade banana bread by pre-order.
 
 ABOUT THE BUSINESS (these are the only facts — never invent new ones):
 - Everything is baked fresh by pre-order in small batches. There is NO walk-in store, so customers must order in advance.
 - Orders happen through our Facebook page: the customer messages the shop first, and the shop replies with the order confirmation, the accepted mode of payment, and the delivery details.
-- Menu prices (per loaf):
+- Banana bread prices (per loaf):
 ${MENU}
+- Banana muffins (per box of 4):
+${MUFFIN_MENU}
+- The featured muffin on the website is the ${featuredMuffin.name} at ₱${featuredMuffin.price} per box of 4; the other muffin flavors are also available.
 - Best Seller: Chocolate Chips + Cashews at ₱190.
 - Storage: room temperature 2–3 days, fridge up to 5 days, freezer up to 2 months.
 - Based in Marikina City; delivery areas and arrangements are confirmed personally by the shop.

@@ -1,5 +1,6 @@
 import { SITE } from "./site";
 import { catalog } from "./catalog";
+import { featuredMuffin, muffinFlavors } from "./muffins";
 
 export type ChatLink = { label: string; href: string };
 export type ChatReply = {
@@ -14,6 +15,7 @@ export const WELCOME =
 export const STARTER_CHIPS = [
   "What's on the menu?",
   "How much is a loaf?",
+  "Do you have muffins?",
   "How do I pay?",
   "How do I store it?",
   "How do I order?",
@@ -81,6 +83,17 @@ const REFUSAL_REPLY: ChatReply = {
 };
 
 const menuList = catalog.map((p) => `• ${p.name} — ₱${p.price}`).join("\n");
+const muffinList = muffinFlavors
+  .map((m) => `• ${m.name} — ₱${m.price} per box of 4`)
+  .join("\n");
+
+const MUFFIN_REPLY: ChatReply = {
+  text:
+    `We now have banana muffins, sold per box of 4:\n${muffinList}\n` +
+    `The ${featuredMuffin.name} (₱${featuredMuffin.price}) is featured on the site, and you can choose any flavor when you order.`,
+  chips: ["How do I order?", "What's on the menu?"],
+  link: { label: "See the muffins in the Menu", href: "#menu" },
+};
 
 type Intent = { id: string; keywords: string[] };
 
@@ -225,6 +238,7 @@ export function needsGemini(rawInput: string): boolean {
 
   if (IDENTITY_PATTERNS.some((p) => p.test(normalized))) return false;
   if (BLOCKED_PATTERNS.some((p) => p.test(normalized))) return false;
+  if (/\bmuffins?\b/.test(normalized)) return false;
   if (detectProduct(normalized, words)) return false;
   for (const intent of INTENTS) {
     if (scoreIntent(intent, normalized, words) > 0) return false;
@@ -241,6 +255,7 @@ export function getReply(rawInput: string): ChatReply {
 
   if (IDENTITY_PATTERNS.some((p) => p.test(normalized))) return IDENTITY_REPLY;
   if (BLOCKED_PATTERNS.some((p) => p.test(normalized))) return REFUSAL_REPLY;
+  if (/\bmuffins?\b/.test(normalized)) return MUFFIN_REPLY;
 
   const product = detectProduct(normalized, words);
   if (product) {
@@ -272,14 +287,18 @@ export function getReply(rawInput: string): ChatReply {
 
     case "menu":
       return {
-        text: `Here's our lineup of banana bread loaves:\n${menuList}`,
+        text:
+          `Here's our lineup:\n\nBanana bread loaves:\n${menuList}\n\n` +
+          `Banana muffins (per box of 4):\n${muffinList}`,
         chips: ["Which one is the best seller?", "How much is a loaf?"],
         link: { label: "Browse photos in the Menu", href: "#menu" },
       };
 
     case "price":
       return {
-        text: `Prices are per loaf:\n${menuList}`,
+        text:
+          `Banana bread prices are per loaf:\n${menuList}\n\n` +
+          `Muffin prices are per box of 4:\n${muffinList}`,
         chips: ["Which one is the best seller?", "How do I order?"],
       };
 

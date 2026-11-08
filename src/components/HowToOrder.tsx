@@ -6,7 +6,7 @@ const steps = [
   {
     number: "1",
     title: "Choose Your Flavor",
-    description: "Pick your favorite banana bread.",
+    description: "Pick your favorite banana bread or muffin flavor.",
   },
   {
     number: "2",
