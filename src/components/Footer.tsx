@@ -2,6 +2,8 @@
 
 import { ArrowUp } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { POLICIES } from "@/lib/policies";
+import { usePolicies } from "@/components/legal/ConsentProvider";
 import Reveal from "./Reveal";
 
 const navLinks = [
@@ -13,6 +15,8 @@ const navLinks = [
 ];
 
 export default function Footer() {
+  const { openPolicy } = usePolicies();
+
   const backToTop = () => {
     window.scrollTo({ top: 0 });
   };
@@ -57,8 +61,26 @@ export default function Footer() {
           </div>
         </Reveal>
 
-        <div className="mt-8 border-t border-cream-ink/15 pt-6 text-center text-xs text-cream-ink/70 sm:mt-10">
-          © 2026 {SITE.name}. All rights reserved.
+        <div className="mt-8 border-t border-cream-ink/15 pt-6 sm:mt-10">
+          <nav
+            aria-label="Policies"
+            className="flex flex-wrap justify-center gap-x-5 gap-y-2.5"
+          >
+            {POLICIES.map((policy) => (
+              <button
+                key={policy.id}
+                type="button"
+                onClick={() => openPolicy(policy.id)}
+                className="cursor-pointer rounded-sm text-xs text-cream-ink/70 underline-offset-4 transition-colors duration-200 hover:text-cream-ink hover:underline"
+              >
+                {policy.label}
+              </button>
+            ))}
+          </nav>
+
+          <p className="mt-4 text-center text-xs text-cream-ink/70">
+            © 2026 {SITE.name}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, DM_Sans, Caveat } from "next/font/google";
+import Script from "next/script";
 import ThemeProvider from "@/components/ThemeProvider";
 import MotionProvider from "@/components/MotionProvider";
+import ConsentProvider from "@/components/legal/ConsentProvider";
+import { getConsentBootstrapScript } from "@/lib/consent";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -35,10 +38,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${dmSerif.variable} ${dmSans.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Script id="consent-bootstrap" strategy="beforeInteractive">
+          {getConsentBootstrapScript()}
+        </Script>
         <div aria-hidden="true" className="bg-ambient" />
         <div aria-hidden="true" className="bg-noise" />
         <MotionProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <ConsentProvider>{children}</ConsentProvider>
+          </ThemeProvider>
         </MotionProvider>
       </body>
     </html>

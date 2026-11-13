@@ -142,3 +142,42 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* The bootstrap script in the root layout adds this class when valid consent
+   already exists, so returning visitors never see a flash of the consent modal. */
+html.consent-granted [data-consent-overlay] {
+  display: none !important;
+}
+
+/* First-visit consent modal entrance. Runs during the first paint (before
+   hydration) so the dialog never has to wait on JavaScript to appear. */
+@keyframes consent-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes consent-dialog-in {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.consent-overlay-in {
+  animation: consent-overlay-in 0.3s ease-out;
+}
+
+.consent-dialog-in {
+  animation: consent-dialog-in 0.52s var(--ease-spring);
+}
